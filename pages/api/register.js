@@ -34,7 +34,7 @@ export default async function handler(req, res) {
   try {
     // Push lead to GHL CRM
     try {
-      const ghlResponse = await fetch(`${GHL_API_URL}?locationId=${GHL_LOCATION_ID}`, {
+      const ghlResponse = await fetch(GHL_API_URL, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${GHL_API_KEY}`,
