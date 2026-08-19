@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Script from 'next/script';
 import { ArrowRight, CheckCircle, Users, TrendingUp, Clock } from 'lucide-react';
 
@@ -6,6 +6,31 @@ const GLOW_BUTTON = "bg-gradient-to-r from-yellow-400 to-red-500 text-black font
 
 export default function WebinarFunnel() {
   const [page, setPage] = useState('landing');
+
+  // The GHL widget script injects a <chat-widget> element at the end of
+  // <body> regardless of where the loader <script> tag sits. Move it into
+  // our styled container so it actually appears centered on the page.
+  useEffect(() => {
+    const container = document.getElementById('register-widget-slot');
+    if (!container) return;
+
+    const tryMove = () => {
+      const widget = document.querySelector('body > chat-widget');
+      if (widget && widget.parentElement !== container) {
+        container.appendChild(widget);
+        return true;
+      }
+      return false;
+    };
+
+    if (tryMove()) return;
+
+    const observer = new MutationObserver(() => {
+      if (tryMove()) observer.disconnect();
+    });
+    observer.observe(document.body, { childList: true });
+    return () => observer.disconnect();
+  }, []);
 
   const scrollToRegister = () =>
     document.getElementById('register-widget')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -245,7 +270,7 @@ export default function WebinarFunnel() {
               id="register-widget"
               className="max-w-md mx-auto rounded-2xl p-1 bg-gradient-to-r from-yellow-400 via-red-500 to-yellow-400 shadow-[0_0_50px_15px_rgba(251,191,36,0.4)]"
             >
-              <div className="bg-blue-950 rounded-2xl overflow-hidden">
+              <div id="register-widget-slot" className="bg-blue-950 rounded-2xl overflow-hidden min-h-[400px]">
                 <Script
                   src="https://widgets.leadconnectorhq.com/loader.js"
                   data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
