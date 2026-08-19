@@ -57,41 +57,41 @@ export default function WebinarFunnel() {
         </nav>
 
         {/* Hero */}
-        <div className="max-w-5xl mx-auto px-8 py-12">
+        <div className="max-w-5xl mx-auto px-4 sm:px-8 py-12">
           {/* SCARCITY BANNER */}
           <div
             onClick={scrollToRegister}
-            className="bg-red-600 text-white px-8 py-4 rounded-lg text-center mb-8 animate-pulse cursor-pointer hover:bg-red-700 transition"
+            className="bg-red-600 text-white px-4 sm:px-8 py-4 rounded-lg text-center mb-8 animate-pulse cursor-pointer hover:bg-red-700 transition"
           >
-            <div className="font-black text-lg">URGENT: Only 7 Spots Left for Sunday's Webinar</div>
+            <div className="font-black text-base sm:text-lg">URGENT: Only 7 Spots Left for Sunday's Webinar</div>
             <div className="text-sm">Next session: Sept 15 (2+ week wait)</div>
           </div>
 
           <div className="text-center mb-12">
-            <h1 className="text-7xl font-black mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 leading-tight">
               Your Real Estate Business Is <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500">Hemorrhaging Money</span>
             </h1>
-            <p className="text-3xl text-yellow-300 font-bold mb-6">
+            <p className="text-xl sm:text-2xl md:text-3xl text-yellow-300 font-bold mb-6">
               And Your Leads Are Walking Right Out the Door
             </p>
-            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
               While you sleep tonight, at least <span className="text-red-400 font-bold">$2,847</span> in commission is slipping away from you because of ONE simple system failure that 91% of brokers don't know they have.
             </p>
             <button
               onClick={scrollToRegister}
-              className="bg-gradient-to-r from-yellow-400 to-red-500 text-black px-8 py-5 rounded-lg inline-block text-2xl font-black mb-8 hover:scale-105 transform transition cursor-pointer"
+              className="bg-gradient-to-r from-yellow-400 to-red-500 text-black px-4 sm:px-8 py-4 sm:py-5 rounded-lg inline-block text-base sm:text-2xl font-black mb-8 hover:scale-105 transform transition cursor-pointer"
             >
               WATCH: The 3 Framework System That Recovered $156K+ For Our Brokers
             </button>
             <div>
-              <button onClick={scrollToRegister} className={`${GLOW_BUTTON} text-xl px-10 py-5`}>
+              <button onClick={scrollToRegister} className={`${GLOW_BUTTON} text-lg sm:text-xl px-6 sm:px-10 py-4 sm:py-5`}>
                 SAVE MY SPOT NOW <ArrowRight size={28} />
               </button>
             </div>
           </div>
 
           {/* TESTIMONIALS - REALTOR QUOTES */}
-          <div className="mb-16 grid grid-cols-3 gap-6">
+          <div className="mb-16 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-gradient-to-b from-blue-800 to-blue-900 rounded-2xl p-6 border-2 border-yellow-400">
               <div className="text-yellow-300 text-2xl mb-3">★★★★★</div>
               <p className="text-blue-100 italic mb-4">"I stopped losing leads overnight. Every inquiry now gets followed up automatically — I closed 3 extra deals my first month."</p>
@@ -110,28 +110,28 @@ export default function WebinarFunnel() {
           </div>
 
           {/* Social Proof - RESULTS PROOF */}
-          <div className="grid grid-cols-3 gap-6 mb-16">
-            <div className="bg-gradient-to-br from-green-900 to-green-800 rounded-lg p-8 border-l-4 border-yellow-400">
-              <div className="text-5xl font-black text-yellow-300 mb-2">$156K</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
+            <div className="bg-gradient-to-br from-green-900 to-green-800 rounded-lg p-6 sm:p-8 border-l-4 border-yellow-400">
+              <div className="text-4xl sm:text-5xl font-black text-yellow-300 mb-2">$156K</div>
               <div className="text-green-100 font-bold mb-1">Average $ Recovered</div>
               <div className="text-sm text-green-200">Per broker in Year 1</div>
             </div>
-            <div className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-lg p-8 border-l-4 border-yellow-400">
-              <div className="text-5xl font-black text-yellow-300 mb-2">537</div>
+            <div className="bg-gradient-to-br from-blue-900 to-blue-800 rounded-lg p-6 sm:p-8 border-l-4 border-yellow-400">
+              <div className="text-4xl sm:text-5xl font-black text-yellow-300 mb-2">537</div>
               <div className="text-blue-100 font-bold mb-1">Active Brokers</div>
               <div className="text-sm text-blue-200">Actively using system RIGHT NOW</div>
             </div>
-            <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg p-8 border-l-4 border-yellow-400">
-              <div className="text-5xl font-black text-yellow-300 mb-2">23%</div>
+            <div className="bg-gradient-to-br from-red-900 to-red-800 rounded-lg p-6 sm:p-8 border-l-4 border-yellow-400">
+              <div className="text-4xl sm:text-5xl font-black text-yellow-300 mb-2">23%</div>
               <div className="text-red-100 font-bold mb-1">Deal Increase</div>
               <div className="text-sm text-red-200">Average additional deals closed</div>
             </div>
           </div>
 
           {/* TRUST SECTION */}
-          <div className="bg-blue-900 border border-yellow-400 rounded-xl p-12 mb-16 text-center">
+          <div className="bg-blue-900 border border-yellow-400 rounded-xl p-6 sm:p-12 mb-16 text-center">
             <p className="text-yellow-400 font-bold text-lg mb-4">PROVEN TRACK RECORD</p>
-            <div className="grid grid-cols-2 gap-6 text-sm text-blue-100">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 text-sm text-blue-100">
               <div>$50M+ in deals recovered (verified)</div>
               <div> 4.9/5 rating (247 reviews)</div>
               <div> 30-day money-back guarantee</div>
@@ -140,9 +140,9 @@ export default function WebinarFunnel() {
           </div>
 
           {/* Problem - THE BLEEDING */}
-          <div className="bg-gradient-to-br from-red-950 to-red-900 border-2 border-red-500 rounded-xl p-12 mb-12">
-            <h2 className="text-4xl font-black mb-8 text-red-300"> 4 Major Flaws We Fix</h2>
-            <div className="space-y-4 text-lg text-red-50">
+          <div className="bg-gradient-to-br from-red-950 to-red-900 border-2 border-red-500 rounded-xl p-6 sm:p-12 mb-12">
+            <h2 className="text-3xl sm:text-4xl font-black mb-8 text-red-300"> 4 Major Flaws We Fix</h2>
+            <div className="space-y-4 text-base sm:text-lg text-red-50">
               <div className="flex items-start gap-4 bg-red-900 bg-opacity-50 p-4 rounded-lg">
                 <span className="text-red-400 text-3xl font-black flex-shrink-0">①</span>
                 <p><span className="font-bold text-red-200">The Multi-Source Chaos:</span>Leads coming from website, calls, Facebook, referrals, walk-ins—but NO central system. They're drowning in a sea of disorganized data.</p>
@@ -168,10 +168,10 @@ export default function WebinarFunnel() {
           </div>
 
           {/* Solution - THE FIX */}
-          <div className="bg-gradient-to-br from-green-900 via-green-800 to-green-900 rounded-xl p-12 mb-12 border-2 border-yellow-400">
-            <h2 className="text-4xl font-black mb-2">The GetGoodTwin System</h2>
-            <p className="text-green-200 text-lg mb-8">See it LIVE in this week's webinar—the exact system that recovered $156K+ for our brokers</p>
-            <div className="grid grid-cols-2 gap-6">
+          <div className="bg-gradient-to-br from-green-900 via-green-800 to-green-900 rounded-xl p-6 sm:p-12 mb-12 border-2 border-yellow-400">
+            <h2 className="text-3xl sm:text-4xl font-black mb-2">The GetGoodTwin System</h2>
+            <p className="text-green-200 text-base sm:text-lg mb-8">See it LIVE in this week's webinar—the exact system that recovered $156K+ for our brokers</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-green-800 bg-opacity-60 p-6 rounded-lg border-l-4 border-yellow-400">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-4xl"></span>
@@ -232,10 +232,10 @@ export default function WebinarFunnel() {
           </div>
 
           {/* Webinar Details - WHAT YOU'LL GET */}
-          <div className="bg-blue-900 border-2 border-yellow-400 rounded-xl p-12 mb-12">
-            <h2 className="text-4xl font-black mb-2 text-yellow-300">What You'll Discover (LIVE Demo)</h2>
-            <p className="text-blue-200 mb-8 text-lg">Sunday, August 30, 2026 @ 2:00 PM EST — 30 minutes that could change your business</p>
-            <div className="space-y-5 text-lg">
+          <div className="bg-blue-900 border-2 border-yellow-400 rounded-xl p-6 sm:p-12 mb-12">
+            <h2 className="text-3xl sm:text-4xl font-black mb-2 text-yellow-300">What You'll Discover (LIVE Demo)</h2>
+            <p className="text-blue-200 mb-8 text-base sm:text-lg">Sunday, August 30, 2026 @ 2:00 PM EST — 30 minutes that could change your business</p>
+            <div className="space-y-5 text-base sm:text-lg">
               <div className="flex items-start gap-4 bg-blue-800 bg-opacity-50 p-5 rounded-lg">
                 <div className="text-3xl flex-shrink-0"></div>
                 <div>
@@ -270,24 +270,24 @@ export default function WebinarFunnel() {
 
           {/* CTA - BIG BUTTON */}
           <div className="text-center mb-12">
-            <button onClick={scrollToRegister} className={`${GLOW_BUTTON} text-3xl px-16 py-8 mb-6`}>
-              SECURE MY SPOT NOW <ArrowRight size={40} />
+            <button onClick={scrollToRegister} className={`${GLOW_BUTTON} text-xl sm:text-3xl px-6 sm:px-16 py-5 sm:py-8 mb-6`}>
+              SECURE MY SPOT NOW <ArrowRight size={32} />
             </button>
-            <p className="text-yellow-300 font-bold text-xl mt-6">Next session: Sept 15 (2+ week wait)</p>
+            <p className="text-yellow-300 font-bold text-lg sm:text-xl mt-6">Next session: Sept 15 (2+ week wait)</p>
           </div>
 
           {/* Registration widget - centered on the page */}
           <div className="mb-12">
-            <div className="max-w-md mx-auto mb-6 bg-gradient-to-r from-green-800 to-green-900 border-2 border-yellow-400 rounded-xl p-6 text-center">
-              <p className="text-yellow-300 font-black text-lg mb-1">FREE BONUS: Register in the next</p>
-              <div className="text-4xl font-black text-white mb-1 tabular-nums">
+            <div className="max-w-md mx-auto mb-6 bg-gradient-to-r from-green-800 to-green-900 border-2 border-yellow-400 rounded-xl p-4 sm:p-6 text-center">
+              <p className="text-yellow-300 font-black text-base sm:text-lg mb-1">FREE BONUS: Register in the next</p>
+              <div className="text-3xl sm:text-4xl font-black text-white mb-1 tabular-nums">
                 {timerExpired ? "00:00" : `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`}
               </div>
               <p className="text-green-100 text-sm">
                 and we'll email you the free 3-page Claude Guide — a quick-start prep kit to set up your own lead-capture system on your own, no webinar required.
               </p>
             </div>
-            <h2 className="text-center text-3xl font-black text-yellow-300 mb-6">Register In 10 Seconds Below</h2>
+            <h2 className="text-center text-2xl sm:text-3xl font-black text-yellow-300 mb-6">Register In 10 Seconds Below</h2>
             <div className="relative max-w-2xl mx-auto">
               {/* Slanted "spots left" ribbon pointing at the widget */}
               <div className="hidden md:flex absolute -right-8 md:-right-44 top-6 flex-col items-end z-10 -rotate-6">
@@ -316,7 +316,7 @@ export default function WebinarFunnel() {
                 id="register-widget"
                 className="max-w-md mx-auto rounded-2xl p-1 bg-gradient-to-r from-yellow-400 via-red-500 to-yellow-400 shadow-[0_0_50px_15px_rgba(251,191,36,0.4)]"
               >
-                <div id="register-widget-slot" className="bg-blue-950 rounded-2xl overflow-visible min-h-[700px]">
+                <div id="register-widget-slot" className="bg-blue-950 rounded-2xl overflow-visible min-h-[450px] sm:min-h-[700px]">
                   <Script
                     src="https://widgets.leadconnectorhq.com/loader.js"
                     data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
@@ -376,11 +376,11 @@ export default function WebinarFunnel() {
 
   if (page === 'thankyou') {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-green-900 to-black text-white flex items-center justify-center px-8">
+      <div className="min-h-screen bg-gradient-to-b from-green-900 to-black text-white flex items-center justify-center px-4 sm:px-8">
         <div className="max-w-2xl w-full text-center">
-          <div className="text-7xl mb-6"></div>
-          <h1 className="text-5xl font-black mb-4">You're Registered!</h1>
-          <p className="text-2xl text-green-200 mb-8">
+          <div className="text-5xl sm:text-7xl mb-6"></div>
+          <h1 className="text-3xl sm:text-5xl font-black mb-4">You're Registered!</h1>
+          <p className="text-lg sm:text-2xl text-green-200 mb-8">
             Webinar: Sunday, August 30, 2026 @ 2:00 PM EST
           </p>
 
