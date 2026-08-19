@@ -47,7 +47,10 @@ export default function WebinarFunnel() {
         {/* Hero */}
         <div className="max-w-5xl mx-auto px-8 py-12">
           {/* SCARCITY BANNER */}
-          <div className="bg-red-600 text-white px-8 py-4 rounded-lg text-center mb-8 animate-pulse">
+          <div
+            onClick={scrollToRegister}
+            className="bg-red-600 text-white px-8 py-4 rounded-lg text-center mb-8 animate-pulse cursor-pointer hover:bg-red-700 transition"
+          >
             <div className="font-black text-lg">⚡ URGENT: Only 7 Spots Left for Friday's Webinar</div>
             <div className="text-sm">Next session: Sept 15 (2+ week wait)</div>
           </div>
@@ -257,7 +260,10 @@ export default function WebinarFunnel() {
             <button onClick={scrollToRegister} className={`${GLOW_BUTTON} text-3xl px-16 py-8 mb-6`}>
               🚀 SECURE MY SPOT NOW <ArrowRight size={40} />
             </button>
-            <div className="bg-red-600 text-white px-8 py-4 rounded-lg inline-block font-black text-lg">
+            <div
+              onClick={scrollToRegister}
+              className="bg-red-600 text-white px-8 py-4 rounded-lg inline-block font-black text-lg cursor-pointer hover:bg-red-700 transition"
+            >
               ⚡ ONLY 7 SPOTS LEFT — FILLS UP TODAY
             </div>
             <p className="text-yellow-300 font-bold text-xl mt-6">Next session: Sept 15 (2+ week wait)</p>
