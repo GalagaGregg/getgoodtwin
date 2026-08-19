@@ -6,6 +6,18 @@ const GLOW_BUTTON = "bg-gradient-to-r from-yellow-400 to-red-500 text-black font
 
 export default function WebinarFunnel() {
   const [page, setPage] = useState('landing');
+  const [secondsLeft, setSecondsLeft] = useState(300);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setSecondsLeft((s) => (s > 0 ? s - 1 : 0));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const minutes = Math.floor(secondsLeft / 60);
+  const seconds = secondsLeft % 60;
+  const timerExpired = secondsLeft === 0;
 
   // The GHL widget script injects a <chat-widget> element at the end of
   // <body> regardless of where the loader <script> tag sits. Move it into
@@ -272,6 +284,15 @@ export default function WebinarFunnel() {
 
           {/* Registration widget - centered on the page */}
           <div className="mb-12">
+            <div className="max-w-md mx-auto mb-6 bg-gradient-to-r from-green-800 to-green-900 border-2 border-yellow-400 rounded-xl p-6 text-center">
+              <p className="text-yellow-300 font-black text-lg mb-1">FREE BONUS: Register in the next</p>
+              <div className="text-4xl font-black text-white mb-1 tabular-nums">
+                {timerExpired ? "00:00" : `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`}
+              </div>
+              <p className="text-green-100 text-sm">
+                and we'll email you the free 3-page Claude Guide — a quick-start prep kit to set up your own lead-capture system on your own, no webinar required.
+              </p>
+            </div>
             <h2 className="text-center text-3xl font-black text-yellow-300 mb-6">Register In 10 Seconds Below</h2>
             <div
               id="register-widget"
