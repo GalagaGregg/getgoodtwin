@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import Script from 'next/script';
 import { ArrowRight, CheckCircle, Users, TrendingUp, Clock } from 'lucide-react';
 
+const GLOW_BUTTON = "bg-gradient-to-r from-yellow-400 to-red-500 text-black font-black rounded-xl hover:shadow-2xl transform hover:scale-105 transition inline-flex items-center gap-3 shadow-[0_0_25px_8px_rgba(251,191,36,0.45)] hover:shadow-[0_0_40px_12px_rgba(251,191,36,0.65)] animate-pulse";
+
 export default function WebinarFunnel() {
   const [page, setPage] = useState('landing');
+
+  const scrollToRegister = () =>
+    document.getElementById('register-widget')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
   if (page === 'landing') {
     return (
@@ -34,6 +39,11 @@ export default function WebinarFunnel() {
             </p>
             <div className="bg-gradient-to-r from-yellow-400 to-red-500 text-black px-8 py-5 rounded-lg inline-block text-2xl font-black mb-8">
               🎯 WATCH: The 3 Framework System That Recovered $156K+ For Our Brokers
+            </div>
+            <div>
+              <button onClick={scrollToRegister} className={`${GLOW_BUTTON} text-xl px-10 py-5`}>
+                🚀 SAVE MY SPOT NOW <ArrowRight size={28} />
+              </button>
             </div>
           </div>
 
@@ -101,6 +111,11 @@ export default function WebinarFunnel() {
                 <span className="text-red-400 text-3xl font-black flex-shrink-0">④</span>
                 <p><span className="font-bold text-red-200">The Silent Bleed:</span> While you're sleeping tonight, $2,847 walks out the door. Not once. Every single night. That's <span className="font-black text-red-300">$1.04M/year</span> in deals you'll never close because of poor systems.</p>
               </div>
+            </div>
+            <div className="text-center mt-8">
+              <button onClick={scrollToRegister} className={`${GLOW_BUTTON} text-xl px-10 py-5`}>
+                🛑 STOP THE BLEEDING — REGISTER NOW <ArrowRight size={28} />
+              </button>
             </div>
           </div>
 
@@ -214,10 +229,7 @@ export default function WebinarFunnel() {
 
           {/* CTA - BIG BUTTON */}
           <div className="text-center mb-12">
-            <button
-              onClick={() => document.getElementById('register-widget')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
-              className="bg-gradient-to-r from-yellow-400 to-red-500 text-black text-3xl font-black px-16 py-8 rounded-xl hover:shadow-2xl transform hover:scale-105 transition inline-flex items-center gap-4 mb-6"
-            >
+            <button onClick={scrollToRegister} className={`${GLOW_BUTTON} text-3xl px-16 py-8 mb-6`}>
               🚀 SECURE MY SPOT NOW <ArrowRight size={40} />
             </button>
             <div className="bg-red-600 text-white px-8 py-4 rounded-lg inline-block font-black text-lg">
@@ -227,14 +239,22 @@ export default function WebinarFunnel() {
           </div>
 
           {/* Registration widget - centered on the page */}
-          <div id="register-widget" className="max-w-md mx-auto mb-12">
-            <Script
-              src="https://widgets.leadconnectorhq.com/loader.js"
-              data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-              data-widget-id="6a85f8b01013cf7dd53bff8a"
-              data-source="WEB_USER"
-              strategy="lazyOnload"
-            />
+          <div className="mb-12">
+            <h2 className="text-center text-3xl font-black text-yellow-300 mb-6">👇 Register In 10 Seconds Below</h2>
+            <div
+              id="register-widget"
+              className="max-w-md mx-auto rounded-2xl p-1 bg-gradient-to-r from-yellow-400 via-red-500 to-yellow-400 shadow-[0_0_50px_15px_rgba(251,191,36,0.4)]"
+            >
+              <div className="bg-blue-950 rounded-2xl overflow-hidden">
+                <Script
+                  src="https://widgets.leadconnectorhq.com/loader.js"
+                  data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+                  data-widget-id="6a85f8b01013cf7dd53bff8a"
+                  data-source="WEB_USER"
+                  strategy="lazyOnload"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Trust Badges - PROOF */}
