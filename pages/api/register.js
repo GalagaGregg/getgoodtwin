@@ -33,6 +33,7 @@ export default async function handler(req, res) {
 
   try {
     // Push lead to GHL CRM
+    if (GHL_API_KEY) {
     try {
       const ghlResponse = await fetch(GHL_API_URL, {
         method: 'POST',
@@ -57,6 +58,7 @@ export default async function handler(req, res) {
       }
     } catch (ghlError) {
       console.error('GHL error (non-fatal):', ghlError.message);
+    }
       // Don't fail registration if GHL fails
     }
 
@@ -197,3 +199,21 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Failed to process registration' });
   }
 }
+
+    // Send to Zapier webhook
+    const ZAPIER_WEBHOOK_URL = process.env.ZAPIER_WEBHOOK_URL;
+    if (ZAPIER_WEBHOOK_URL) {
+      try {
+        await fetch(ZAPIER_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            email,
+            phone
+          })
+        });
+      } catch (e) {
+        console.error('Webhook error:', e.message);
+      }
+    }
