@@ -316,7 +316,7 @@ export default function WebinarFunnel() {
                 id="register-widget"
                 className="max-w-md mx-auto rounded-2xl p-1 bg-gradient-to-r from-yellow-400 via-red-500 to-yellow-400 shadow-[0_0_50px_15px_rgba(251,191,36,0.4)]"
               >
-                <div id="register-widget-slot" className="bg-blue-950 rounded-2xl overflow-hidden min-h-[400px]">
+                <div id="register-widget-slot" className="bg-blue-950 rounded-2xl overflow-visible min-h-[700px]">
                   <Script
                     src="https://widgets.leadconnectorhq.com/loader.js"
                     data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
