@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Script from 'next/script';
 import { ArrowRight, CheckCircle, Users, TrendingUp, Clock } from 'lucide-react';
 
 export default function WebinarFunnel() {
@@ -30,13 +29,6 @@ export default function WebinarFunnel() {
   if (page === 'landing') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-black text-white">
-        <Script
-          src="https://widgets.leadconnectorhq.com/loader.js"
-          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="6a85f8b01013cf7dd53bff8a"
-          data-source="WEB_USER"
-          strategy="lazyOnload"
-        />
         {/* Nav */}
         <nav className="flex justify-between items-center px-8 py-6 border-b border-blue-700">
           <div className="text-3xl font-black">GetGoodTwin</div>
@@ -279,6 +271,23 @@ export default function WebinarFunnel() {
             <p className="text-blue-200 text-sm italic">Used by top 1% of brokers. Industry-leading results. Zero BS.</p>
           </div>
         </div>
+
+        <footer className="border-t border-blue-800 mt-12 px-8 py-10 text-blue-300 text-sm">
+          <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-center md:text-left">
+              <div className="font-bold text-white mb-1">GetGoodTwin</div>
+              <div>11510 NW 15th Ct, Hollywood, FL</div>
+              <div>+1 (305) 697-9093</div>
+            </div>
+            <div className="flex gap-6">
+              <a href="/privacy" className="hover:text-white underline">Privacy Policy</a>
+              <a href="/terms" className="hover:text-white underline">Terms of Service</a>
+            </div>
+          </div>
+          <div className="max-w-5xl mx-auto text-center md:text-left mt-4 text-blue-400 text-xs">
+            © {new Date().getFullYear()} GetGoodTwin. All rights reserved.
+          </div>
+        </footer>
       </div>
     );
   }
