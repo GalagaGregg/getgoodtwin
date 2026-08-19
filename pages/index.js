@@ -65,9 +65,12 @@ export default function WebinarFunnel() {
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
               While you sleep tonight, at least <span className="text-red-400 font-bold">$2,847</span> in commission is slipping away from you because of ONE simple system failure that 91% of brokers don't know they have.
             </p>
-            <div className="bg-gradient-to-r from-yellow-400 to-red-500 text-black px-8 py-5 rounded-lg inline-block text-2xl font-black mb-8">
+            <button
+              onClick={scrollToRegister}
+              className="bg-gradient-to-r from-yellow-400 to-red-500 text-black px-8 py-5 rounded-lg inline-block text-2xl font-black mb-8 hover:scale-105 transform transition cursor-pointer"
+            >
               🎯 WATCH: The 3 Framework System That Recovered $156K+ For Our Brokers
-            </div>
+            </button>
             <div>
               <button onClick={scrollToRegister} className={`${GLOW_BUTTON} text-xl px-10 py-5`}>
                 🚀 SAVE MY SPOT NOW <ArrowRight size={28} />
@@ -75,18 +78,23 @@ export default function WebinarFunnel() {
             </div>
           </div>
 
-          {/* VIDEO SECTION */}
-          <div className="mb-16 bg-gradient-to-b from-blue-800 to-blue-900 rounded-2xl p-8 border-2 border-yellow-400">
-            <div className="aspect-video bg-blue-950 rounded-lg flex items-center justify-center mb-6 border-4 border-yellow-400">
-              <div className="text-center">
-                <div className="text-6xl mb-4">▶️</div>
-                <div className="text-white font-bold text-xl">Your VSL Video Goes Here</div>
-                <div className="text-blue-300 text-sm mt-2">(Replace with your video URL for maximum impact)</div>
-              </div>
+          {/* TESTIMONIALS - REALTOR QUOTES */}
+          <div className="mb-16 grid grid-cols-3 gap-6">
+            <div className="bg-gradient-to-b from-blue-800 to-blue-900 rounded-2xl p-6 border-2 border-yellow-400">
+              <div className="text-yellow-300 text-2xl mb-3">★★★★★</div>
+              <p className="text-blue-100 italic mb-4">"I stopped losing leads overnight. Every inquiry now gets followed up automatically — I closed 3 extra deals my first month."</p>
+              <p className="text-yellow-300 font-bold text-sm">— Sarah M., Broker, Austin TX</p>
             </div>
-            <p className="text-blue-100 text-center italic text-sm">
-              ☝️ Watch the exact 3-framework system that's currently recovering an average of $156,000 per broker annually
-            </p>
+            <div className="bg-gradient-to-b from-blue-800 to-blue-900 rounded-2xl p-6 border-2 border-yellow-400">
+              <div className="text-yellow-300 text-2xl mb-3">★★★★★</div>
+              <p className="text-blue-100 italic mb-4">"My team used to argue about which leads were hot. Now everyone sees the same dashboard. No more dropped balls."</p>
+              <p className="text-yellow-300 font-bold text-sm">— David R., Team Lead, Tampa FL</p>
+            </div>
+            <div className="bg-gradient-to-b from-blue-800 to-blue-900 rounded-2xl p-6 border-2 border-yellow-400">
+              <div className="text-yellow-300 text-2xl mb-3">★★★★★</div>
+              <p className="text-blue-100 italic mb-4">"Setup took a day. The automated SMS reminders alone got me two showings I would've missed."</p>
+              <p className="text-yellow-300 font-bold text-sm">— Priya K., Realtor, Phoenix AZ</p>
+            </div>
           </div>
 
           {/* Social Proof - RESULTS PROOF */}
@@ -235,13 +243,6 @@ export default function WebinarFunnel() {
                 <div>
                   <div className="font-black text-yellow-300">FRAMEWORK #3: The Friction Matrix</div>
                   <div className="text-blue-100 text-base">Where deals ACTUALLY die (hint: it's not where you think). The 7 pressure points killing your close rate—and how to fix them in 48 hours.</div>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 bg-blue-800 bg-opacity-50 p-5 rounded-lg">
-                <div className="text-3xl flex-shrink-0">📊</div>
-                <div>
-                  <div className="font-black text-yellow-300">LIVE CASE STUDY: Marcus's $500K → $1M Transformation</div>
-                  <div className="text-blue-100 text-base">Same broker. Same market. Same leads. Different SYSTEM = 100% more deals closed. You'll see the EXACT numbers and how he did it.</div>
                 </div>
               </div>
               <div className="flex items-start gap-4 bg-blue-800 bg-opacity-50 p-5 rounded-lg border-l-4 border-yellow-400">
