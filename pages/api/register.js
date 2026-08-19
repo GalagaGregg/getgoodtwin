@@ -2,7 +2,7 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const GHL_API_KEY = process.env.GHL_API_KEY;
-const GHL_API_URL = 'https://rest.gohighlevel.com/v1/contacts';
+const GHL_API_URL = 'https://services.leadconnectorhq.com/contacts/';
 const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID;
 
 export default async function handler(req, res) {
@@ -34,37 +34,53 @@ export default async function handler(req, res) {
   try {
     // Push lead to GHL CRM
     if (GHL_API_KEY) {
-    try {
-      const ghlResponse = await fetch(GHL_API_URL, {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${GHL_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          firstName: name.split(' ')[0],
-          lastName: name.split(' ').slice(1).join(' '),
-          email: email,
-          phone: phone,
-          tags: ['webinar-registrant', 'getgoodtwin'],
-          source: 'webinar-funnel'
-        })
-      });
+      try {
+        const ghlResponse = await fetch(GHL_API_URL, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${GHL_API_KEY}`,
+            'Content-Type': 'application/json',
+            'Version': '2021-07-28',
+          },
+          body: JSON.stringify({
+            locationId: GHL_LOCATION_ID,
+            firstName: name.split(' ')[0],
+            lastName: name.split(' ').slice(1).join(' '),
+            email: email,
+            phone: phone,
+            tags: ['webinar-registrant', 'getgoodtwin'],
+            source: 'webinar-funnel'
+          })
+        });
 
-      if (!ghlResponse.ok) {
-        console.warn('GHL API response:', ghlResponse.status);
-      } else {
-        console.log('✅ Lead pushed to GHL');
+        if (!ghlResponse.ok) {
+          console.warn('GHL API response:', ghlResponse.status, await ghlResponse.text());
+        } else {
+          console.log('✅ Lead pushed to GHL');
+        }
+      } catch (ghlError) {
+        console.error('GHL error (non-fatal):', ghlError.message);
       }
-    } catch (ghlError) {
-      console.error('GHL error (non-fatal):', ghlError.message);
-    }
       // Don't fail registration if GHL fails
     }
 
+    // Push lead to Zapier webhook (secondary sync path)
+    const ZAPIER_WEBHOOK_URL = process.env.ZAPIER_WEBHOOK_URL;
+    if (ZAPIER_WEBHOOK_URL) {
+      try {
+        await fetch(ZAPIER_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, phone })
+        });
+      } catch (e) {
+        console.error('Zapier webhook error (non-fatal):', e.message);
+      }
+    }
+
+    let emailSent = false;
     if (!process.env.RESEND_API_KEY) {
-      console.error('RESEND_API_KEY not configured');
-      return res.status(500).json({ error: 'Email service configuration error' });
+      console.error('RESEND_API_KEY not configured — skipping confirmation email');
     }
 
     const emailContent = {
@@ -169,28 +185,36 @@ export default async function handler(req, res) {
       text: `You're registered for our webinar! Email: ${email}, Phone: ${phone}. See you in 2 weeks.`
     };
 
-    // Send email to registrant
-    const response = await resend.emails.send(emailContent);
+    // Send confirmation email to registrant (non-fatal — a lead is already
+    // captured above via GHL/Zapier even if the email step fails)
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const response = await resend.emails.send(emailContent);
+        if (response.error) {
+          throw new Error(response.error.message);
+        }
+        emailSent = true;
+        console.log('✅ Email sent to:', email);
 
-    if (response.error) {
-      throw new Error(response.error.message);
+        // Optional: Send notification to owner
+        if (process.env.RESEND_OWNER_EMAIL) {
+          await resend.emails.send({
+            from: 'GetGoodTwin <noreply@getgoodtwin.com>',
+            to: process.env.RESEND_OWNER_EMAIL,
+            subject: `📊 New Webinar Registration: ${name}`,
+            html: `<h2>New Registration</h2><p><strong>Name:</strong> ${name}<br/><strong>Email:</strong> ${email}<br/><strong>Phone:</strong> ${phone}<br/><strong>Time:</strong> ${new Date().toISOString()}</p>`
+          });
+        }
+      } catch (emailError) {
+        console.error('Email send error (non-fatal):', emailError.message);
+      }
     }
-
-    // Optional: Send notification to owner
-    if (process.env.RESEND_OWNER_EMAIL) {
-      await resend.emails.send({
-        from: 'GetGoodTwin <noreply@getgoodtwin.com>',
-        to: process.env.RESEND_OWNER_EMAIL,
-        subject: `📊 New Webinar Registration: ${name}`,
-        html: `<h2>New Registration</h2><p><strong>Name:</strong> ${name}<br/><strong>Email:</strong> ${email}<br/><strong>Phone:</strong> ${phone}<br/><strong>Time:</strong> ${new Date().toISOString()}</p>`
-      });
-    }
-
-    console.log('✅ Email sent to:', email);
 
     return res.status(200).json({
       success: true,
-      message: 'Registration confirmed! Check your email.',
+      message: emailSent
+        ? 'Registration confirmed! Check your email.'
+        : 'Registration confirmed!',
       data: { name, email, phone }
     });
 
@@ -199,21 +223,3 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'Failed to process registration' });
   }
 }
-
-    // Send to Zapier webhook
-    const ZAPIER_WEBHOOK_URL = process.env.ZAPIER_WEBHOOK_URL;
-    if (ZAPIER_WEBHOOK_URL) {
-      try {
-        await fetch(ZAPIER_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name,
-            email,
-            phone
-          })
-        });
-      } catch (e) {
-        console.error('Webhook error:', e.message);
-      }
-    }
