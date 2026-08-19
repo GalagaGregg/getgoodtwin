@@ -101,7 +101,7 @@ export default async function handler(req, res) {
               <h3>How to Recover Lost Leads & Close 15% More Deals</h3>
 
               <p style="text-align: center; font-size: 18px; margin: 20px 0; line-height: 1.8;">
-                <span class="highlight">📅 Friday, August 30, 2026 @ 6:00 PM EST</span><br/>
+                <span class="highlight">📅 Sunday, August 30, 2026 @ 2:00 PM EST</span><br/>
                 <span class="highlight">🔴 LIVE Demo + Framework Training</span>
               </p>
 
