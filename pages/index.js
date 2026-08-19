@@ -290,12 +290,12 @@ export default function WebinarFunnel() {
             <h2 className="text-center text-3xl font-black text-yellow-300 mb-6">Register In 10 Seconds Below</h2>
             <div className="relative max-w-2xl mx-auto">
               {/* Slanted "spots left" ribbon pointing at the widget */}
-              <div className="hidden md:flex absolute -right-4 md:-right-40 top-4 flex-col items-center z-10 -rotate-6">
+              <div className="hidden md:flex absolute -right-8 md:-right-44 top-6 flex-col items-end z-10 -rotate-6">
                 <div className="bg-red-600 text-white px-5 py-3 rounded-lg font-black text-sm text-center shadow-[0_0_20px_rgba(239,68,68,0.6)] border-2 border-yellow-300 whitespace-nowrap">
                   ONLY 7 SPOTS LEFT<br />FILLS UP TODAY
                 </div>
-                <svg width="60" height="50" viewBox="0 0 60 50" className="rotate-6 -mt-1 text-yellow-300">
-                  <path d="M50 5 Q20 5 12 40" fill="none" stroke="currentColor" strokeWidth="3" markerEnd="url(#arrowhead)" />
+                <svg width="100" height="60" viewBox="0 0 100 60" className="rotate-6 -mt-1 text-yellow-300">
+                  <path d="M85 10 C 40 10, 35 50, 5 50" fill="none" stroke="currentColor" strokeWidth="3" markerEnd="url(#arrowhead)" />
                   <defs>
                     <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
                       <path d="M0,0 L8,4 L0,8 Z" fill="currentColor" />
