@@ -273,12 +273,6 @@ export default function WebinarFunnel() {
             <button onClick={scrollToRegister} className={`${GLOW_BUTTON} text-3xl px-16 py-8 mb-6`}>
               SECURE MY SPOT NOW <ArrowRight size={40} />
             </button>
-            <div
-              onClick={scrollToRegister}
-              className="bg-red-600 text-white px-8 py-4 rounded-lg inline-block font-black text-lg cursor-pointer hover:bg-red-700 transition"
-            >
-              ONLY 7 SPOTS LEFT — FILLS UP TODAY
-            </div>
             <p className="text-yellow-300 font-bold text-xl mt-6">Next session: Sept 15 (2+ week wait)</p>
           </div>
 
@@ -294,18 +288,43 @@ export default function WebinarFunnel() {
               </p>
             </div>
             <h2 className="text-center text-3xl font-black text-yellow-300 mb-6">Register In 10 Seconds Below</h2>
-            <div
-              id="register-widget"
-              className="max-w-md mx-auto rounded-2xl p-1 bg-gradient-to-r from-yellow-400 via-red-500 to-yellow-400 shadow-[0_0_50px_15px_rgba(251,191,36,0.4)]"
-            >
-              <div id="register-widget-slot" className="bg-blue-950 rounded-2xl overflow-hidden min-h-[400px]">
-                <Script
-                  src="https://widgets.leadconnectorhq.com/loader.js"
-                  data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-                  data-widget-id="6a85f8b01013cf7dd53bff8a"
-                  data-source="WEB_USER"
-                  strategy="lazyOnload"
-                />
+            <div className="relative max-w-2xl mx-auto">
+              {/* Slanted "spots left" ribbon pointing at the widget */}
+              <div className="hidden md:flex absolute -right-4 md:-right-40 top-4 flex-col items-center z-10 -rotate-6">
+                <div className="bg-red-600 text-white px-5 py-3 rounded-lg font-black text-sm text-center shadow-[0_0_20px_rgba(239,68,68,0.6)] border-2 border-yellow-300 whitespace-nowrap">
+                  ONLY 7 SPOTS LEFT<br />FILLS UP TODAY
+                </div>
+                <svg width="60" height="50" viewBox="0 0 60 50" className="rotate-6 -mt-1 text-yellow-300">
+                  <path d="M50 5 Q20 5 12 40" fill="none" stroke="currentColor" strokeWidth="3" markerEnd="url(#arrowhead)" />
+                  <defs>
+                    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                      <path d="M0,0 L8,4 L0,8 Z" fill="currentColor" />
+                    </marker>
+                  </defs>
+                </svg>
+              </div>
+
+              {/* Mobile version - stacked above, still slanted */}
+              <div
+                onClick={scrollToRegister}
+                className="md:hidden mx-auto mb-4 max-w-[220px] -rotate-2 bg-red-600 text-white px-5 py-3 rounded-lg font-black text-sm text-center shadow-[0_0_20px_rgba(239,68,68,0.6)] border-2 border-yellow-300 cursor-pointer"
+              >
+                ONLY 7 SPOTS LEFT — FILLS UP TODAY
+              </div>
+
+              <div
+                id="register-widget"
+                className="max-w-md mx-auto rounded-2xl p-1 bg-gradient-to-r from-yellow-400 via-red-500 to-yellow-400 shadow-[0_0_50px_15px_rgba(251,191,36,0.4)]"
+              >
+                <div id="register-widget-slot" className="bg-blue-950 rounded-2xl overflow-hidden min-h-[400px]">
+                  <Script
+                    src="https://widgets.leadconnectorhq.com/loader.js"
+                    data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+                    data-widget-id="6a85f8b01013cf7dd53bff8a"
+                    data-source="WEB_USER"
+                    strategy="lazyOnload"
+                  />
+                </div>
               </div>
             </div>
           </div>
