@@ -276,7 +276,7 @@ export default function WebinarFunnel() {
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-center md:text-left">
               <div className="font-bold text-white mb-1">GetGoodTwin</div>
-              <div>12555 Orange Dr, Davie, FL 33330</div>
+              <div>11510 NW 15th Ct, Hollywood, FL</div>
               <div>+1 (305) 697-9093</div>
             </div>
             <div className="flex gap-6">

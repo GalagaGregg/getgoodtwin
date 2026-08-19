@@ -17,7 +17,7 @@ export default function Terms() {
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-2">Who We Are</h2>
-            <p>GetGoodTwin, located at 12555 Orange Dr, Davie, FL 33330, provides lead management systems and consulting for real estate brokers. We can be reached at +1 (305) 697-9093.</p>
+            <p>GetGoodTwin, located at 11510 NW 15th Ct, Hollywood, FL, provides lead management systems and consulting for real estate brokers. We can be reached at +1 (305) 697-9093.</p>
           </section>
 
           <section>
@@ -42,7 +42,7 @@ export default function Terms() {
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-2">Contact Us</h2>
-            <p>GetGoodTwin<br/>12555 Orange Dr, Davie, FL 33330<br/>+1 (305) 697-9093</p>
+            <p>GetGoodTwin<br/>11510 NW 15th Ct, Hollywood, FL<br/>+1 (305) 697-9093</p>
           </section>
         </div>
       </div>
