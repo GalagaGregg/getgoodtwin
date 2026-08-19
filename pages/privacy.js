@@ -12,7 +12,7 @@ export default function Privacy() {
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-2">Who We Are</h2>
-            <p>GetGoodTwin ("we", "us", "our") provides lead management systems for real estate brokers. We are located at 11510 NW 15th Ct, Hollywood, FL. You can reach us at +1 (305) 697-9093.</p>
+            <p>GetGoodTwin ("we", "us", "our") provides lead management systems for real estate brokers. We are located at 12555 Orange Dr, Davie, FL 33330. You can reach us at +1 (305) 697-9093.</p>
           </section>
 
           <section>
@@ -47,7 +47,7 @@ export default function Privacy() {
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-2">Contact Us</h2>
-            <p>GetGoodTwin<br/>11510 NW 15th Ct, Hollywood, FL<br/>+1 (305) 697-9093</p>
+            <p>GetGoodTwin<br/>12555 Orange Dr, Davie, FL 33330<br/>+1 (305) 697-9093</p>
           </section>
         </div>
       </div>
