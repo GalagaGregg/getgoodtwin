@@ -51,7 +51,7 @@ export default function WebinarFunnel() {
             onClick={scrollToRegister}
             className="bg-red-600 text-white px-8 py-4 rounded-lg text-center mb-8 animate-pulse cursor-pointer hover:bg-red-700 transition"
           >
-            <div className="font-black text-lg">⚡ URGENT: Only 7 Spots Left for Sunday's Webinar</div>
+            <div className="font-black text-lg">URGENT: Only 7 Spots Left for Sunday's Webinar</div>
             <div className="text-sm">Next session: Sept 15 (2+ week wait)</div>
           </div>
 
@@ -69,11 +69,11 @@ export default function WebinarFunnel() {
               onClick={scrollToRegister}
               className="bg-gradient-to-r from-yellow-400 to-red-500 text-black px-8 py-5 rounded-lg inline-block text-2xl font-black mb-8 hover:scale-105 transform transition cursor-pointer"
             >
-              🎯 WATCH: The 3 Framework System That Recovered $156K+ For Our Brokers
+              WATCH: The 3 Framework System That Recovered $156K+ For Our Brokers
             </button>
             <div>
               <button onClick={scrollToRegister} className={`${GLOW_BUTTON} text-xl px-10 py-5`}>
-                🚀 SAVE MY SPOT NOW <ArrowRight size={28} />
+                SAVE MY SPOT NOW <ArrowRight size={28} />
               </button>
             </div>
           </div>
@@ -118,101 +118,101 @@ export default function WebinarFunnel() {
 
           {/* TRUST SECTION */}
           <div className="bg-blue-900 border border-yellow-400 rounded-xl p-12 mb-16 text-center">
-            <p className="text-yellow-400 font-bold text-lg mb-4">✓ PROVEN TRACK RECORD</p>
+            <p className="text-yellow-400 font-bold text-lg mb-4">PROVEN TRACK RECORD</p>
             <div className="grid grid-cols-2 gap-6 text-sm text-blue-100">
-              <div>📊 $50M+ in deals recovered (verified)</div>
-              <div>⭐ 4.9/5 rating (247 reviews)</div>
-              <div>💰 30-day money-back guarantee</div>
-              <div>🔒 Used by top 1% of brokers</div>
+              <div>$50M+ in deals recovered (verified)</div>
+              <div> 4.9/5 rating (247 reviews)</div>
+              <div> 30-day money-back guarantee</div>
+              <div>Used by top 1% of brokers</div>
             </div>
           </div>
 
           {/* Problem - THE BLEEDING */}
           <div className="bg-gradient-to-br from-red-950 to-red-900 border-2 border-red-500 rounded-xl p-12 mb-12">
-            <h2 className="text-4xl font-black mb-8 text-red-300">💉 4 Major Flaws We Fix</h2>
+            <h2 className="text-4xl font-black mb-8 text-red-300"> 4 Major Flaws We Fix</h2>
             <div className="space-y-4 text-lg text-red-50">
               <div className="flex items-start gap-4 bg-red-900 bg-opacity-50 p-4 rounded-lg">
                 <span className="text-red-400 text-3xl font-black flex-shrink-0">①</span>
-                <p><span className="font-bold text-red-200">The Multi-Source Chaos:</span> Leads coming from website, calls, Facebook, referrals, walk-ins—but NO central system. They're drowning in a sea of disorganized data.</p>
+                <p><span className="font-bold text-red-200">The Multi-Source Chaos:</span>Leads coming from website, calls, Facebook, referrals, walk-ins—but NO central system. They're drowning in a sea of disorganized data.</p>
               </div>
               <div className="flex items-start gap-4 bg-red-900 bg-opacity-50 p-4 rounded-lg">
                 <span className="text-red-400 text-3xl font-black flex-shrink-0">②</span>
-                <p><span className="font-bold text-red-200">The Follow-Up Failure:</span> Nobody on your team is tracking follow-ups consistently. Leads go cold in 48 hours because there's no system. That's where 60% of deals die.</p>
+                <p><span className="font-bold text-red-200">The Follow-Up Failure:</span>Nobody on your team is tracking follow-ups consistently. Leads go cold in 48 hours because there's no system. That's where 60% of deals die.</p>
               </div>
               <div className="flex items-start gap-4 bg-red-900 bg-opacity-50 p-4 rounded-lg">
                 <span className="text-red-400 text-3xl font-black flex-shrink-0">③</span>
-                <p><span className="font-bold text-red-200">The Visibility Blackout:</span> Your team doesn't know which leads are hot TODAY, which need a follow-up THIS WEEK, which are dead. You're flying blind.</p>
+                <p><span className="font-bold text-red-200">The Visibility Blackout:</span>Your team doesn't know which leads are hot TODAY, which need a follow-up THIS WEEK, which are dead. You're flying blind.</p>
               </div>
               <div className="flex items-start gap-4 bg-red-900 bg-opacity-50 p-4 rounded-lg">
                 <span className="text-red-400 text-3xl font-black flex-shrink-0">④</span>
-                <p><span className="font-bold text-red-200">The Silent Bleed:</span> While you're sleeping tonight, $2,847 walks out the door. Not once. Every single night. That's <span className="font-black text-red-300">$1.04M/year</span> in deals you'll never close because of poor systems.</p>
+                <p><span className="font-bold text-red-200">The Silent Bleed:</span>While you're sleeping tonight, $2,847 walks out the door. Not once. Every single night. That's <span className="font-black text-red-300">$1.04M/year</span> in deals you'll never close because of poor systems.</p>
               </div>
             </div>
             <div className="text-center mt-8">
               <button onClick={scrollToRegister} className={`${GLOW_BUTTON} text-xl px-10 py-5`}>
-                🛑 STOP THE BLEEDING — REGISTER NOW <ArrowRight size={28} />
+                STOP THE BLEEDING — REGISTER NOW <ArrowRight size={28} />
               </button>
             </div>
           </div>
 
           {/* Solution - THE FIX */}
           <div className="bg-gradient-to-br from-green-900 via-green-800 to-green-900 rounded-xl p-12 mb-12 border-2 border-yellow-400">
-            <h2 className="text-4xl font-black mb-2">🎯 The GetGoodTwin System</h2>
+            <h2 className="text-4xl font-black mb-2">The GetGoodTwin System</h2>
             <p className="text-green-200 text-lg mb-8">See it LIVE in this week's webinar—the exact system that recovered $156K+ for our brokers</p>
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-green-800 bg-opacity-60 p-6 rounded-lg border-l-4 border-yellow-400">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-4xl">📊</span>
+                  <span className="text-4xl"></span>
                   <span className="text-xl font-black text-yellow-300">One Master Dashboard</span>
                 </div>
                 <p className="text-green-100 mb-2">All leads from ALL sources in ONE place:</p>
                 <ul className="text-sm text-green-200 space-y-1">
-                  <li>✓ Website leads</li>
-                  <li>✓ Facebook leads</li>
-                  <li>✓ Referrals & walk-ins</li>
-                  <li>✓ Phone inquiries</li>
+                  <li>Website leads</li>
+                  <li>Facebook leads</li>
+                  <li>Referrals & walk-ins</li>
+                  <li>Phone inquiries</li>
                 </ul>
                 <p className="text-green-300 font-bold mt-3">No more spreadsheets. No more chaos.</p>
               </div>
               <div className="bg-green-800 bg-opacity-60 p-6 rounded-lg border-l-4 border-yellow-400">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-4xl">🤖</span>
+                  <span className="text-4xl"></span>
                   <span className="text-xl font-black text-yellow-300">Automated Follow-Up</span>
                 </div>
                 <p className="text-green-100 mb-2">The system works 24/7 so you don't have to:</p>
                 <ul className="text-sm text-green-200 space-y-1">
-                  <li>✓ Auto-emails every lead</li>
-                  <li>✓ SMS reminders</li>
-                  <li>✓ Smart re-engagement</li>
-                  <li>✓ Zero manual work</li>
+                  <li>Auto-emails every lead</li>
+                  <li>SMS reminders</li>
+                  <li>Smart re-engagement</li>
+                  <li>Zero manual work</li>
                 </ul>
                 <p className="text-green-300 font-bold mt-3">Your team closes deals. System handles the rest.</p>
               </div>
               <div className="bg-green-800 bg-opacity-60 p-6 rounded-lg border-l-4 border-yellow-400">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-4xl">📈</span>
+                  <span className="text-4xl"></span>
                   <span className="text-xl font-black text-yellow-300">Real-Time Pipeline Visibility</span>
                 </div>
                 <p className="text-green-100 mb-2">Know EXACTLY where every deal is RIGHT NOW:</p>
                 <ul className="text-sm text-green-200 space-y-1">
-                  <li>✓ New leads</li>
-                  <li>✓ Hot prospects (ready to close)</li>
-                  <li>✓ Deals in progress</li>
-                  <li>✓ Dead/unqualified</li>
+                  <li>New leads</li>
+                  <li>Hot prospects (ready to close)</li>
+                  <li>Deals in progress</li>
+                  <li>Dead/unqualified</li>
                 </ul>
                 <p className="text-green-300 font-bold mt-3">Never lose another deal.</p>
               </div>
               <div className="bg-green-800 bg-opacity-60 p-6 rounded-lg border-l-4 border-yellow-400">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-4xl">💎</span>
+                  <span className="text-4xl"></span>
                   <span className="text-xl font-black text-yellow-300">ROI Guarantee</span>
                 </div>
                 <p className="text-green-100 mb-2">One extra deal pays for everything:</p>
                 <ul className="text-sm text-green-200 space-y-1">
-                  <li>✓ $6K setup</li>
-                  <li>✓ 3 months service ($6K)</li>
-                  <li>✓ One $15K deal = breakeven</li>
-                  <li>✓ Everything else = pure profit</li>
+                  <li>$6K setup</li>
+                  <li> 3 months service ($6K)</li>
+                  <li>One $15K deal = breakeven</li>
+                  <li>Everything else = pure profit</li>
                 </ul>
                 <p className="text-green-300 font-bold mt-3">30-day money-back if you don't see results.</p>
               </div>
@@ -221,32 +221,32 @@ export default function WebinarFunnel() {
 
           {/* Webinar Details - WHAT YOU'LL GET */}
           <div className="bg-blue-900 border-2 border-yellow-400 rounded-xl p-12 mb-12">
-            <h2 className="text-4xl font-black mb-2 text-yellow-300">📍 What You'll Discover (LIVE Demo)</h2>
+            <h2 className="text-4xl font-black mb-2 text-yellow-300">What You'll Discover (LIVE Demo)</h2>
             <p className="text-blue-200 mb-8 text-lg">Sunday, August 30, 2026 @ 2:00 PM EST — 30 minutes that could change your business</p>
             <div className="space-y-5 text-lg">
               <div className="flex items-start gap-4 bg-blue-800 bg-opacity-50 p-5 rounded-lg">
-                <div className="text-3xl flex-shrink-0">🎬</div>
+                <div className="text-3xl flex-shrink-0"></div>
                 <div>
                   <div className="font-black text-yellow-300">FRAMEWORK #1: The Three Types of Lost Deals</div>
                   <div className="text-blue-100 text-base">Why $3M in deals are hemorrhaging from your pipeline RIGHT NOW—and where exactly they're slipping away. (Most brokers have NO IDEA.)</div>
                 </div>
               </div>
               <div className="flex items-start gap-4 bg-blue-800 bg-opacity-50 p-5 rounded-lg">
-                <div className="text-3xl flex-shrink-0">💰</div>
+                <div className="text-3xl flex-shrink-0"></div>
                 <div>
                   <div className="font-black text-yellow-300">FRAMEWORK #2: The Lead Stewardship Model</div>
                   <div className="text-blue-100 text-base">How $1M brokers think COMPLETELY DIFFERENTLY about leads than everyone else. The exact system that separates top 1% from the rest.</div>
                 </div>
               </div>
               <div className="flex items-start gap-4 bg-blue-800 bg-opacity-50 p-5 rounded-lg">
-                <div className="text-3xl flex-shrink-0">⚙️</div>
+                <div className="text-3xl flex-shrink-0"></div>
                 <div>
                   <div className="font-black text-yellow-300">FRAMEWORK #3: The Friction Matrix</div>
                   <div className="text-blue-100 text-base">Where deals ACTUALLY die (hint: it's not where you think). The 7 pressure points killing your close rate—and how to fix them in 48 hours.</div>
                 </div>
               </div>
               <div className="flex items-start gap-4 bg-blue-800 bg-opacity-50 p-5 rounded-lg border-l-4 border-yellow-400">
-                <div className="text-3xl flex-shrink-0">🎁</div>
+                <div className="text-3xl flex-shrink-0"></div>
                 <div>
                   <div className="font-black text-yellow-300 text-lg">BONUS: Limited Offer (First 10 Brokers Only)</div>
                   <div className="text-yellow-200 text-base font-bold">Setup fee cut in HALF: $3K instead of $6K. Value: $3,000.</div>
@@ -259,20 +259,20 @@ export default function WebinarFunnel() {
           {/* CTA - BIG BUTTON */}
           <div className="text-center mb-12">
             <button onClick={scrollToRegister} className={`${GLOW_BUTTON} text-3xl px-16 py-8 mb-6`}>
-              🚀 SECURE MY SPOT NOW <ArrowRight size={40} />
+              SECURE MY SPOT NOW <ArrowRight size={40} />
             </button>
             <div
               onClick={scrollToRegister}
               className="bg-red-600 text-white px-8 py-4 rounded-lg inline-block font-black text-lg cursor-pointer hover:bg-red-700 transition"
             >
-              ⚡ ONLY 7 SPOTS LEFT — FILLS UP TODAY
+              ONLY 7 SPOTS LEFT — FILLS UP TODAY
             </div>
             <p className="text-yellow-300 font-bold text-xl mt-6">Next session: Sept 15 (2+ week wait)</p>
           </div>
 
           {/* Registration widget - centered on the page */}
           <div className="mb-12">
-            <h2 className="text-center text-3xl font-black text-yellow-300 mb-6">👇 Register In 10 Seconds Below</h2>
+            <h2 className="text-center text-3xl font-black text-yellow-300 mb-6">Register In 10 Seconds Below</h2>
             <div
               id="register-widget"
               className="max-w-md mx-auto rounded-2xl p-1 bg-gradient-to-r from-yellow-400 via-red-500 to-yellow-400 shadow-[0_0_50px_15px_rgba(251,191,36,0.4)]"
@@ -291,14 +291,14 @@ export default function WebinarFunnel() {
 
           {/* Trust Badges - PROOF */}
           <div className="border-t-2 border-yellow-400 pt-12 text-center">
-            <p className="text-yellow-300 font-black text-lg mb-6">✓ VERIFIED BY 537 ACTIVE BROKERS</p>
+            <p className="text-yellow-300 font-black text-lg mb-6">VERIFIED BY 537 ACTIVE BROKERS</p>
             <div className="grid grid-cols-2 gap-6 max-w-2xl mx-auto mb-8">
               <div className="bg-blue-900 bg-opacity-60 rounded-lg p-4">
                 <div className="text-3xl font-black text-yellow-300">$50M+</div>
                 <div className="text-blue-200 font-bold">In deals recovered</div>
               </div>
               <div className="bg-blue-900 bg-opacity-60 rounded-lg p-4">
-                <div className="text-3xl font-black text-yellow-300">4.9 ⭐</div>
+                <div className="text-3xl font-black text-yellow-300">4.9 </div>
                 <div className="text-blue-200 font-bold">Rating (247 reviews)</div>
               </div>
               <div className="bg-blue-900 bg-opacity-60 rounded-lg p-4">
@@ -338,7 +338,7 @@ export default function WebinarFunnel() {
     return (
       <div className="min-h-screen bg-gradient-to-b from-green-900 to-black text-white flex items-center justify-center px-8">
         <div className="max-w-2xl w-full text-center">
-          <div className="text-7xl mb-6">✓</div>
+          <div className="text-7xl mb-6"></div>
           <h1 className="text-5xl font-black mb-4">You're Registered!</h1>
           <p className="text-2xl text-green-200 mb-8">
             Webinar: Sunday, August 30, 2026 @ 2:00 PM EST
@@ -350,7 +350,7 @@ export default function WebinarFunnel() {
             rel="noopener noreferrer"
             className="inline-block bg-gradient-to-r from-yellow-400 to-red-500 text-black font-bold px-12 py-4 rounded-lg mb-12 hover:shadow-2xl transform hover:scale-105 transition text-xl"
           >
-            🎯 JOIN ZOOM MEETING
+            JOIN ZOOM MEETING
           </a>
 
           <p className="text-lg text-green-200 mb-12">
