@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Script from 'next/script';
 import { ArrowRight, CheckCircle, Users, TrendingUp, Clock } from 'lucide-react';
 
-const GLOW_BUTTON = "bg-gradient-to-r from-yellow-400 to-red-500 text-black font-black rounded-xl hover:shadow-2xl transform hover:scale-105 transition inline-flex items-center gap-3 shadow-[0_0_25px_8px_rgba(251,191,36,0.45)] hover:shadow-[0_0_40px_12px_rgba(251,191,36,0.65)] animate-pulse";
+const GLOW_BUTTON = "bg-gradient-to-r from-yellow-400 to-red-500 text-black font-black rounded-xl hover:shadow-2xl transform hover:scale-105 transition inline-flex items-center gap-3 shadow-[0_0_25px_8px_rgba(251,191,36,0.45)] hover:shadow-[0_0_40px_12px_rgba(251,191,36,0.65)]";
 
 export default function WebinarFunnel() {
   const [page, setPage] = useState('landing');
