@@ -1,8 +1,16 @@
 import Link from 'next/link';
+import Script from 'next/script';
 
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-black text-white px-8 py-16">
+      <Script
+        src="https://widgets.leadconnectorhq.com/loader.js"
+        data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+        data-widget-id="6a85f8b01013cf7dd53bff8a"
+        data-source="WEB_USER"
+        strategy="lazyOnload"
+      />
       <div className="max-w-3xl mx-auto">
         <Link href="/" className="text-blue-300 hover:text-white text-sm">← Back to home</Link>
         <h1 className="text-4xl font-black mt-6 mb-8">Privacy Policy</h1>
@@ -12,7 +20,7 @@ export default function Privacy() {
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-2">Who We Are</h2>
-            <p>GetGoodTwin ("we", "us", "our") provides lead management systems for real estate brokers. We are located at 11510 NW 15th Ct, Hollywood, FL. You can reach us at +1 (305) 697-9093.</p>
+            <p>GetGoodTwin ("we", "us", "our") provides lead management systems for real estate brokers. We are located at 12555 Orange Dr, Davie, FL 33330. You can reach us at +1 (305) 697-9093.</p>
           </section>
 
           <section>
@@ -47,7 +55,7 @@ export default function Privacy() {
 
           <section>
             <h2 className="text-2xl font-bold text-white mb-2">Contact Us</h2>
-            <p>GetGoodTwin<br/>11510 NW 15th Ct, Hollywood, FL<br/>+1 (305) 697-9093</p>
+            <p>GetGoodTwin<br/>12555 Orange Dr, Davie, FL 33330<br/>+1 (305) 697-9093</p>
           </section>
         </div>
       </div>
