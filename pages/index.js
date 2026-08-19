@@ -51,7 +51,7 @@ export default function WebinarFunnel() {
             onClick={scrollToRegister}
             className="bg-red-600 text-white px-8 py-4 rounded-lg text-center mb-8 animate-pulse cursor-pointer hover:bg-red-700 transition"
           >
-            <div className="font-black text-lg">⚡ URGENT: Only 7 Spots Left for Friday's Webinar</div>
+            <div className="font-black text-lg">⚡ URGENT: Only 7 Spots Left for Sunday's Webinar</div>
             <div className="text-sm">Next session: Sept 15 (2+ week wait)</div>
           </div>
 
@@ -214,7 +214,7 @@ export default function WebinarFunnel() {
           {/* Webinar Details - WHAT YOU'LL GET */}
           <div className="bg-blue-900 border-2 border-yellow-400 rounded-xl p-12 mb-12">
             <h2 className="text-4xl font-black mb-2 text-yellow-300">📍 What You'll Discover (LIVE Demo)</h2>
-            <p className="text-blue-200 mb-8 text-lg">Friday, August 30 @ 6:00 PM EST — 30 minutes that could change your business</p>
+            <p className="text-blue-200 mb-8 text-lg">Sunday, August 30, 2026 @ 2:00 PM EST — 30 minutes that could change your business</p>
             <div className="space-y-5 text-lg">
               <div className="flex items-start gap-4 bg-blue-800 bg-opacity-50 p-5 rounded-lg">
                 <div className="text-3xl flex-shrink-0">🎬</div>
@@ -340,7 +340,7 @@ export default function WebinarFunnel() {
           <div className="text-7xl mb-6">✓</div>
           <h1 className="text-5xl font-black mb-4">You're Registered!</h1>
           <p className="text-2xl text-green-200 mb-8">
-            Webinar: Friday, August 30, 2026 @ 6:00 PM EST
+            Webinar: Sunday, August 30, 2026 @ 2:00 PM EST
           </p>
 
           <a
