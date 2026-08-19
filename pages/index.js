@@ -129,7 +129,7 @@ export default function WebinarFunnel() {
 
           {/* Problem - THE BLEEDING */}
           <div className="bg-gradient-to-br from-red-950 to-red-900 border-2 border-red-500 rounded-xl p-12 mb-12">
-            <h2 className="text-4xl font-black mb-8 text-red-300">💉 The 7 Ways Brokers Hemorrhage Deals</h2>
+            <h2 className="text-4xl font-black mb-8 text-red-300">💉 4 Major Flaws We Fix</h2>
             <div className="space-y-4 text-lg text-red-50">
               <div className="flex items-start gap-4 bg-red-900 bg-opacity-50 p-4 rounded-lg">
                 <span className="text-red-400 text-3xl font-black flex-shrink-0">①</span>
