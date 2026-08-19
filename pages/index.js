@@ -1,34 +1,20 @@
 import React, { useState } from 'react';
+import Script from 'next/script';
 import { ArrowRight, CheckCircle, Users, TrendingUp, Clock } from 'lucide-react';
 
 export default function WebinarFunnel() {
   const [page, setPage] = useState('landing');
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleRegister = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('/api/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, phone })
-      });
-      if (response.ok) {
-        setSubmitted(true);
-        setPage('thankyou');
-      }
-    } catch (error) {
-      console.error('Registration error:', error);
-      alert('Error registering. Please try again.');
-    }
-  };
 
   if (page === 'landing') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-black text-white">
+        <Script
+          src="https://widgets.leadconnectorhq.com/loader.js"
+          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+          data-widget-id="6a85f8b01013cf7dd53bff8a"
+          data-source="WEB_USER"
+          strategy="lazyOnload"
+        />
         {/* Nav */}
         <nav className="flex justify-between items-center px-8 py-6 border-b border-blue-700">
           <div className="text-3xl font-black">GetGoodTwin</div>
@@ -236,11 +222,15 @@ export default function WebinarFunnel() {
           {/* CTA - BIG BUTTON */}
           <div className="text-center mb-12">
             <button
-              onClick={() => setPage('register')}
+              onClick={() => {
+                const bubble = document.querySelector('#chat-widget-container, [id^="chat-widget"], [id^="lc_chat"]');
+                if (bubble) bubble.click();
+              }}
               className="bg-gradient-to-r from-yellow-400 to-red-500 text-black text-3xl font-black px-16 py-8 rounded-xl hover:shadow-2xl transform hover:scale-105 transition inline-flex items-center gap-4 mb-6"
             >
               🚀 SECURE MY SPOT NOW <ArrowRight size={40} />
             </button>
+            <p className="text-blue-200 text-sm mt-2">Click the chat bubble in the corner to save your spot</p>
             <div className="bg-red-600 text-white px-8 py-4 rounded-lg inline-block font-black text-lg">
               ⚡ ONLY 7 SPOTS LEFT — FILLS UP TODAY
             </div>
@@ -288,77 +278,6 @@ export default function WebinarFunnel() {
             © {new Date().getFullYear()} GetGoodTwin. All rights reserved.
           </div>
         </footer>
-      </div>
-    );
-  }
-
-  if (page === 'register') {
-    return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-900 to-black text-white flex items-center justify-center px-8">
-        <div className="max-w-md w-full">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-black mb-4">Reserve Your Spot</h1>
-            <p className="text-blue-300 text-lg">Free webinar - No credit card needed</p>
-          </div>
-
-          <form onSubmit={handleRegister} className="space-y-6 bg-blue-900 p-12 rounded-xl border border-blue-700">
-            <div>
-              <label className="block text-sm font-bold mb-2">Your Name</label>
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="John Smith"
-                className="w-full px-4 py-3 rounded bg-blue-800 border border-blue-600 text-white placeholder-blue-400"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-bold mb-2">Email</label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="john@realestatebroker.com"
-                className="w-full px-4 py-3 rounded bg-blue-800 border border-blue-600 text-white placeholder-blue-400"
-                required
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-bold mb-2">Phone (For Zoom Reminder)</label>
-              <input
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                placeholder="(555) 123-4567"
-                className="w-full px-4 py-3 rounded bg-blue-800 border border-blue-600 text-white placeholder-blue-400"
-                required
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-gradient-to-r from-yellow-400 to-red-500 text-black font-bold text-lg py-4 rounded-lg hover:shadow-xl transform hover:scale-105 transition"
-            >
-              CONFIRM MY SPOT
-            </button>
-
-            <p className="text-blue-300 text-xs text-center">
-              ✓ Webinar link will be sent to your email instantly<br/>
-              ✓ SMS reminder 1 hour before<br/>
-              ✓ Recording sent after (in case you miss it)
-            </p>
-          </form>
-
-          <button
-            onClick={() => setPage('landing')}
-            className="w-full mt-6 text-blue-300 hover:text-blue-100 text-sm"
-          >
-            ← Back
-          </button>
-        </div>
       </div>
     );
   }

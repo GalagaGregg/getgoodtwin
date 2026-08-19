@@ -1,16 +1,8 @@
 import Link from 'next/link';
-import Script from 'next/script';
 
 export default function Terms() {
   return (
     <div className="min-h-screen bg-black text-white px-8 py-16">
-      <Script
-        src="https://widgets.leadconnectorhq.com/loader.js"
-        data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-        data-widget-id="6a85f8b01013cf7dd53bff8a"
-        data-source="WEB_USER"
-        strategy="lazyOnload"
-      />
       <div className="max-w-3xl mx-auto">
         <Link href="/" className="text-blue-300 hover:text-white text-sm">← Back to home</Link>
         <h1 className="text-4xl font-black mt-6 mb-8">Terms of Service</h1>
