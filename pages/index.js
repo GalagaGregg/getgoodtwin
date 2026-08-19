@@ -8,13 +8,6 @@ export default function WebinarFunnel() {
   if (page === 'landing') {
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-900 via-blue-800 to-black text-white">
-        <Script
-          src="https://widgets.leadconnectorhq.com/loader.js"
-          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="6a85f8b01013cf7dd53bff8a"
-          data-source="WEB_USER"
-          strategy="lazyOnload"
-        />
         {/* Nav */}
         <nav className="flex justify-between items-center px-8 py-6 border-b border-blue-700">
           <div className="text-3xl font-black">GetGoodTwin</div>
@@ -222,19 +215,26 @@ export default function WebinarFunnel() {
           {/* CTA - BIG BUTTON */}
           <div className="text-center mb-12">
             <button
-              onClick={() => {
-                const bubble = document.querySelector('#chat-widget-container, [id^="chat-widget"], [id^="lc_chat"]');
-                if (bubble) bubble.click();
-              }}
+              onClick={() => document.getElementById('register-widget')?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
               className="bg-gradient-to-r from-yellow-400 to-red-500 text-black text-3xl font-black px-16 py-8 rounded-xl hover:shadow-2xl transform hover:scale-105 transition inline-flex items-center gap-4 mb-6"
             >
               🚀 SECURE MY SPOT NOW <ArrowRight size={40} />
             </button>
-            <p className="text-blue-200 text-sm mt-2">Click the chat bubble in the corner to save your spot</p>
             <div className="bg-red-600 text-white px-8 py-4 rounded-lg inline-block font-black text-lg">
               ⚡ ONLY 7 SPOTS LEFT — FILLS UP TODAY
             </div>
             <p className="text-yellow-300 font-bold text-xl mt-6">Next session: Sept 15 (2+ week wait)</p>
+          </div>
+
+          {/* Registration widget - centered on the page */}
+          <div id="register-widget" className="max-w-md mx-auto mb-12">
+            <Script
+              src="https://widgets.leadconnectorhq.com/loader.js"
+              data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
+              data-widget-id="6a85f8b01013cf7dd53bff8a"
+              data-source="WEB_USER"
+              strategy="lazyOnload"
+            />
           </div>
 
           {/* Trust Badges - PROOF */}
