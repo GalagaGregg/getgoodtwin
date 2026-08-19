@@ -1,8 +1,9 @@
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const GHL_API_KEY = 'pit-8eac45f8-b29c-4b4f-a46a-9da98b442784';
+const GHL_API_KEY = process.env.GHL_API_KEY;
 const GHL_API_URL = 'https://rest.gohighlevel.com/v1/contacts';
+const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID;
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -33,7 +34,7 @@ export default async function handler(req, res) {
   try {
     // Push lead to GHL CRM
     try {
-      const ghlResponse = await fetch(GHL_API_URL, {
+      const ghlResponse = await fetch(`${GHL_API_URL}?locationId=${GHL_LOCATION_ID}`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${GHL_API_KEY}`,
